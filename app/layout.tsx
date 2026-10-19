@@ -13,8 +13,8 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Heavens Munnar - Holiday Resort & Unique Stays",
-  description: "Book unique stays, luxury holiday resort villas, and unforgettable experiences at Heavens Munnar.",
+  title: "Heavens Munnar Holiday Resort - Rooms & Sightseeing Packages",
+  description: "Stay comfortably at Heavens Munnar Holiday Resort. Offering quality room accommodations and customized sightseeing tour packages across Munnar, Valara, and nearby scenic destinations.",
   icons: {
     icon: "/logo.jpg",
     shortcut: "/logo.jpg",
@@ -30,7 +30,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
+      className={`${geistSans.variable} ${geistMono.variable} h-full antialiased scroll-smooth`}
     >
       <body className="min-h-full flex flex-col">{children}</body>
     </html>

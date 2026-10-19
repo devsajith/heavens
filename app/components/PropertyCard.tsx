@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { Heart, Star, ChevronLeft, ChevronRight } from "lucide-react";
+import { Heart, Star, ChevronLeft, ChevronRight, MapPin } from "lucide-react";
 import { Stay } from "../data/stays";
 
 interface PropertyCardProps {
@@ -39,20 +39,20 @@ export default function PropertyCard({
   return (
     <div
       onClick={() => onSelect(stay)}
-      className="group cursor-pointer flex flex-col gap-2.5 rounded-2xl p-2 hover:bg-gray-50/80 transition duration-200"
+      className="group cursor-pointer flex flex-col gap-3 rounded-2xl p-2.5 bg-white border border-stone-200/80 hover:border-stone-400 hover:shadow-xl transition-all duration-300"
     >
       {/* Image Container */}
-      <div className="relative aspect-[4/3] w-full rounded-2xl overflow-hidden bg-gray-100">
+      <div className="relative aspect-[4/3] w-full rounded-xl overflow-hidden bg-stone-100">
         <img
           src={stay.images[currentImageIndex]}
           alt={stay.location}
-          className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 ease-out"
+          className="w-full h-full object-cover group-hover:scale-104 transition-transform duration-700 ease-out"
         />
 
-        {/* Guest Favorite Badge */}
-        {stay.guestFavorite && (
-          <div className="absolute top-3 left-3 bg-white/95 backdrop-blur-xs text-gray-900 text-xs font-semibold px-2.5 py-1 rounded-full shadow-sm flex items-center gap-1">
-            <span>Guest favorite</span>
+        {/* Refined Badge */}
+        {stay.adventureBadge && (
+          <div className="absolute top-3 left-3 bg-[#16241c]/80 backdrop-blur-md text-stone-200 border border-white/15 text-[10px] font-semibold tracking-wide uppercase px-2.5 py-1 rounded-full shadow-2xs">
+            <span>{stay.adventureBadge}</span>
           </div>
         )}
 
@@ -60,13 +60,13 @@ export default function PropertyCard({
         <button
           onClick={handleWishlistClick}
           aria-label="Wishlist"
-          className="absolute top-3 right-3 p-1.5 rounded-full hover:scale-110 transition active:scale-95 text-white/90 hover:text-white"
+          className="absolute top-3 right-3 p-2 rounded-full bg-black/30 hover:bg-black/50 backdrop-blur-md text-white transition active:scale-95"
         >
           <Heart
-            className={`w-5 h-5 drop-shadow-md stroke-[2] ${
+            className={`w-4 h-4 stroke-[2.2] ${
               saved
-                ? "fill-[#FF5A5F] text-[#FF5A5F]"
-                : "fill-black/30 text-white"
+                ? "fill-[#b85d2a] text-[#b85d2a]"
+                : "text-white"
             }`}
           />
         </button>
@@ -77,14 +77,14 @@ export default function PropertyCard({
             <button
               onClick={handlePrevImage}
               aria-label="Previous photo"
-              className="pointer-events-auto w-7 h-7 rounded-full bg-white/90 hover:bg-white text-gray-800 flex items-center justify-center shadow-md transition"
+              className="pointer-events-auto w-7 h-7 rounded-full bg-white/90 hover:bg-white text-stone-800 flex items-center justify-center shadow-md transition"
             >
               <ChevronLeft className="w-4 h-4" />
             </button>
             <button
               onClick={handleNextImage}
               aria-label="Next photo"
-              className="pointer-events-auto w-7 h-7 rounded-full bg-white/90 hover:bg-white text-gray-800 flex items-center justify-center shadow-md transition"
+              className="pointer-events-auto w-7 h-7 rounded-full bg-white/90 hover:bg-white text-stone-800 flex items-center justify-center shadow-md transition"
             >
               <ChevronRight className="w-4 h-4" />
             </button>
@@ -98,7 +98,7 @@ export default function PropertyCard({
               <div
                 key={idx}
                 className={`w-1.5 h-1.5 rounded-full transition-all ${
-                  idx === currentImageIndex ? "bg-white w-2.5" : "bg-white/60"
+                  idx === currentImageIndex ? "bg-white w-2.5" : "bg-white/50"
                 }`}
               />
             ))}
@@ -107,23 +107,35 @@ export default function PropertyCard({
       </div>
 
       {/* Stay Details */}
-      <div className="flex flex-col gap-0.5 text-sm px-1">
-        <div className="flex items-start justify-between font-semibold text-gray-900">
-          <span className="truncate">{stay.location}</span>
-          <div className="flex items-center gap-1 text-xs shrink-0 ml-1">
-            <Star className="w-3.5 h-3.5 fill-gray-900 text-gray-900" />
+      <div className="flex flex-col gap-1 px-1 pb-1">
+        <div className="flex items-start justify-between">
+          <span className="font-bold text-stone-900 text-sm truncate">{stay.location}</span>
+          <div className="flex items-center gap-1 text-xs shrink-0 ml-1 text-stone-700 font-semibold">
+            <Star className="w-3.5 h-3.5 fill-[#b85d2a] text-[#b85d2a]" />
             <span>{stay.rating}</span>
-            <span className="text-gray-500 font-normal">({stay.reviewsCount})</span>
           </div>
         </div>
 
-        <p className="text-xs text-gray-500 truncate">{stay.type}</p>
+        <p className="text-xs text-stone-500 line-clamp-1">{stay.type}</p>
 
-        <div className="mt-1 flex items-baseline gap-1">
-          <span className="font-bold text-gray-900 text-sm">
-            ${stay.pricePerNight}
+        {stay.adventureHighlights && stay.adventureHighlights.length > 0 && (
+          <div className="flex items-center gap-1.5 text-[11px] text-stone-600 mt-0.5">
+            <span className="w-1.5 h-1.5 rounded-full bg-[#b85d2a] shrink-0" />
+            <span className="truncate">{stay.adventureHighlights[0]}</span>
+          </div>
+        )}
+
+        <div className="mt-2 pt-2 border-t border-stone-100 flex items-center justify-between">
+          <div className="flex items-baseline gap-1">
+            <span className="font-black text-stone-900 text-base">
+              ₹{stay.pricePerNight}
+            </span>
+            <span className="text-xs text-stone-500 font-normal">/ night</span>
+          </div>
+          <span className="text-xs font-semibold text-stone-800 group-hover:text-[#b85d2a] transition flex items-center gap-0.5">
+            <span>Reserve</span>
+            <span>→</span>
           </span>
-          <span className="text-xs text-gray-500 font-normal">night</span>
         </div>
       </div>
     </div>

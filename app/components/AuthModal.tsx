@@ -47,19 +47,19 @@ export default function AuthModal({
 
         {/* Modal Header */}
         <div className="text-center mb-6">
-          <h2 className="text-2xl font-bold text-gray-900">
-            {mode === "login" ? "Welcome back to AirNest" : "Create your AirNest account"}
+          <h2 className="text-2xl font-black text-stone-900">
+            {mode === "login" ? "Welcome back to HEAVENS" : "Join HEAVENS Wilderness Club"}
           </h2>
-          <p className="text-xs text-gray-500 mt-1">
+          <p className="text-xs text-stone-500 mt-1">
             {mode === "login"
-              ? "Enter your credentials to access your stays"
-              : "Join millions of travelers discovering unique stays worldwide"}
+              ? "Access your booking details, safari reservations, and member perks"
+              : "Register to unlock exclusive 4x4 safari discounts and trail alerts"}
           </p>
         </div>
 
         {submitted ? (
-          <div className="py-8 text-center text-emerald-600 font-semibold flex flex-col items-center gap-2">
-            <div className="w-12 h-12 rounded-full bg-emerald-100 text-emerald-600 flex items-center justify-center text-xl font-bold">
+          <div className="py-8 text-center text-emerald-700 font-semibold flex flex-col items-center gap-2">
+            <div className="w-12 h-12 rounded-full bg-emerald-100 text-emerald-700 flex items-center justify-center text-xl font-bold">
               ✓
             </div>
             <span>{mode === "login" ? "Successfully logged in!" : "Account created successfully!"}</span>
@@ -68,69 +68,69 @@ export default function AuthModal({
           <form onSubmit={handleSubmit} className="flex flex-col gap-4">
             {mode === "signup" && (
               <div>
-                <label className="text-xs font-semibold text-gray-700 block mb-1">Full Name</label>
+                <label className="text-xs font-bold text-stone-700 block mb-1">Full Name</label>
                 <div className="relative">
-                  <UserIcon className="w-4 h-4 text-gray-400 absolute left-3.5 top-3" />
+                  <UserIcon className="w-4 h-4 text-stone-400 absolute left-3.5 top-3" />
                   <input
                     type="text"
                     required
                     value={name}
                     onChange={(e) => setName(e.target.value)}
                     placeholder="John Doe"
-                    className="w-full pl-10 pr-4 py-2.5 text-xs sm:text-sm border border-gray-300 rounded-xl focus:ring-2 focus:ring-[#FF5A5F] focus:outline-none"
+                    className="w-full pl-10 pr-4 py-2.5 text-xs sm:text-sm border border-stone-300 rounded-xl focus:ring-2 focus:ring-amber-500 focus:outline-none"
                   />
                 </div>
               </div>
             )}
 
             <div>
-              <label className="text-xs font-semibold text-gray-700 block mb-1">Email Address</label>
+              <label className="text-xs font-bold text-stone-700 block mb-1">Email Address</label>
               <div className="relative">
-                <Mail className="w-4 h-4 text-gray-400 absolute left-3.5 top-3" />
+                <Mail className="w-4 h-4 text-stone-400 absolute left-3.5 top-3" />
                 <input
                   type="email"
                   required
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
                   placeholder="name@example.com"
-                  className="w-full pl-10 pr-4 py-2.5 text-xs sm:text-sm border border-gray-300 rounded-xl focus:ring-2 focus:ring-[#FF5A5F] focus:outline-none"
+                  className="w-full pl-10 pr-4 py-2.5 text-xs sm:text-sm border border-[#e5e0d5] rounded-xl focus:ring-2 focus:ring-[#b85d2a] focus:outline-none bg-[#fbfaf7]/40"
                 />
               </div>
             </div>
 
             <div>
-              <label className="text-xs font-semibold text-gray-700 block mb-1">Password</label>
+              <label className="text-xs font-bold text-stone-700 block mb-1">Password</label>
               <div className="relative">
-                <Lock className="w-4 h-4 text-gray-400 absolute left-3.5 top-3" />
+                <Lock className="w-4 h-4 text-stone-400 absolute left-3.5 top-3" />
                 <input
                   type="password"
                   required
                   value={password}
                   onChange={(e) => setPassword(e.target.value)}
                   placeholder="••••••••"
-                  className="w-full pl-10 pr-4 py-2.5 text-xs sm:text-sm border border-gray-300 rounded-xl focus:ring-2 focus:ring-[#FF5A5F] focus:outline-none"
+                  className="w-full pl-10 pr-4 py-2.5 text-xs sm:text-sm border border-[#e5e0d5] rounded-xl focus:ring-2 focus:ring-[#b85d2a] focus:outline-none bg-[#fbfaf7]/40"
                 />
               </div>
             </div>
 
             <button
               type="submit"
-              className="mt-2 w-full py-3 text-sm font-semibold text-white bg-[#FF5A5F] hover:bg-[#e0484d] rounded-xl shadow-md transition transform active:scale-98"
+              className="mt-2 w-full py-3.5 text-xs sm:text-sm font-semibold tracking-wider uppercase text-white bg-[#16241c] hover:bg-[#203429] rounded-xl shadow-md transition transform active:scale-98 cursor-pointer"
             >
-              {mode === "login" ? "Log in" : "Sign up"}
+              {mode === "login" ? "Sign In to Basecamp" : "Create Wilderness Account"}
             </button>
           </form>
         )}
 
         {/* Toggle Mode Footer */}
-        <div className="mt-6 pt-4 border-t border-gray-100 text-center text-xs text-gray-600">
+        <div className="mt-6 pt-4 border-t border-[#e5e0d5] text-center text-xs text-stone-600">
           {mode === "login" ? (
             <span>
               Don't have an account?{" "}
               <button
                 type="button"
                 onClick={() => setMode("signup")}
-                className="font-bold text-[#FF5A5F] hover:underline"
+                className="font-bold text-[#b85d2a] hover:underline"
               >
                 Sign up
               </button>
@@ -141,7 +141,7 @@ export default function AuthModal({
               <button
                 type="button"
                 onClick={() => setMode("login")}
-                className="font-bold text-[#FF5A5F] hover:underline"
+                className="font-bold text-[#b85d2a] hover:underline"
               >
                 Log in
               </button>

@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { Check } from "lucide-react";
+import { Check, Mail } from "lucide-react";
 
 export default function NewsletterBanner() {
   const [email, setEmail] = useState("");
@@ -17,24 +17,27 @@ export default function NewsletterBanner() {
   };
 
   return (
-    <section className="w-full my-12 bg-white rounded-3xl border border-gray-200/80 p-4 sm:p-6 shadow-xs overflow-hidden">
-      <div className="flex flex-col md:flex-row items-center gap-6 md:gap-10">
-        {/* Left Interior Image */}
-        <div className="w-full md:w-1/3 h-52 md:h-44 rounded-2xl overflow-hidden shrink-0">
+    <section className="w-full my-16 bg-[#f5f3ec] rounded-3xl border border-stone-300/70 p-6 sm:p-10 shadow-2xs overflow-hidden text-stone-900">
+      <div className="flex flex-col md:flex-row items-center gap-8 md:gap-12">
+        {/* Left Offroad/Nature Image */}
+        <div className="w-full md:w-2/5 h-56 sm:h-64 rounded-2xl overflow-hidden shrink-0 bg-stone-200 shadow-sm">
           <img
-            src="https://images.unsplash.com/photo-1586023492125-27b2c045efd7?auto=format&fit=crop&w=800&q=80"
-            alt="Cozy interior room"
+            src="/galary/jeep.webp"
+            alt="Idukki Offroad 4x4 Trail"
             className="w-full h-full object-cover"
           />
         </div>
 
         {/* Right Content & Form */}
         <div className="flex-1 flex flex-col justify-center">
-          <h3 className="text-xl sm:text-2xl font-bold text-gray-900 tracking-tight">
-            Get inspired for your next trip
+          <span className="text-[#b85d2a] text-xs font-bold uppercase tracking-widest block mb-2">
+            The Wilderness Journal
+          </span>
+          <h3 className="text-2xl sm:text-3xl font-black text-stone-900 tracking-tight">
+            Secret Trail Coordinates & Seasonal Safari Offers
           </h3>
-          <p className="text-xs sm:text-sm text-gray-500 mt-1 mb-5 max-w-lg">
-            Exclusive stays, travel tips, and special offers—straight to your inbox.
+          <p className="text-xs sm:text-sm text-stone-600 mt-2 mb-6 max-w-lg leading-relaxed">
+            Sign up to receive curated guides on hidden Idukki waterfalls, 4x4 trail conditions, and special seasonal rates for tent camping and timber cabins.
           </p>
 
           <form onSubmit={handleSubmit} className="flex flex-col sm:flex-row gap-3 max-w-md">
@@ -43,19 +46,19 @@ export default function NewsletterBanner() {
               required
               value={email}
               onChange={(e) => setEmail(e.target.value)}
-              placeholder="Enter your email"
-              className="flex-1 px-4 py-2.5 text-xs sm:text-sm rounded-full border border-gray-300 focus:outline-none focus:ring-2 focus:ring-[#FF5A5F] focus:border-transparent text-gray-800 placeholder-gray-400"
+              placeholder="Your email address"
+              className="flex-1 px-4 py-3 text-xs sm:text-sm rounded-full bg-white border border-stone-300 focus:outline-none focus:ring-2 focus:ring-[#b85d2a] text-stone-900 placeholder-stone-400 shadow-2xs"
             />
             <button
               type="submit"
-              className="px-6 py-2.5 text-xs sm:text-sm font-semibold text-white bg-[#FF5A5F] hover:bg-[#e0484d] rounded-full shadow-xs hover:shadow transition transform active:scale-95 shrink-0"
+              className="px-6 py-3 text-xs sm:text-sm font-bold text-white bg-[#16241c] hover:bg-[#b85d2a] rounded-full shadow-sm transition transform active:scale-95 shrink-0 cursor-pointer"
             >
               {subscribed ? (
-                <span className="flex items-center gap-1">
-                  <Check className="w-4 h-4" /> Subscribed!
+                <span className="flex items-center gap-1.5">
+                  <Check className="w-4 h-4" /> Subscribed
                 </span>
               ) : (
-                "Subscribe"
+                "Join Journal"
               )}
             </button>
           </form>
