@@ -3,6 +3,7 @@
 import { useState, useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
+import RoomsSection from "./components/RoomsSection";
 import { 
   Heart, 
   ShoppingBag, 
@@ -164,7 +165,7 @@ export default function SinglePageApp() {
 
   // Scrollspy observer & dynamic scroll tracking
   useEffect(() => {
-    const sectionIds = ["home", "about", "explore", "gallery", "contact"];
+    const sectionIds = ["home", "about", "rooms", "explore", "gallery", "contact"];
     const handleScroll = () => {
       const currentScrollY = window.scrollY;
       setScrollY(currentScrollY);
@@ -256,6 +257,7 @@ export default function SinglePageApp() {
             {[
               { id: "home", label: "Home" },
               { id: "about", label: "About" },
+              { id: "rooms", label: "Rooms & Stays" },
               { id: "explore", label: "Explore" },
               { id: "gallery", label: "Gallery" },
               { id: "contact", label: "Contact" },
@@ -305,6 +307,7 @@ export default function SinglePageApp() {
             {[
               { id: "home", label: "Home" },
               { id: "about", label: "About" },
+              { id: "rooms", label: "Rooms & Stays" },
               { id: "explore", label: "Explore" },
               { id: "gallery", label: "Gallery" },
               { id: "contact", label: "Contact" },
@@ -377,16 +380,22 @@ export default function SinglePageApp() {
 
           <div className="flex flex-wrap items-center justify-center gap-3.5">
             <button
-              onClick={() => scrollToSection("explore")}
+              onClick={() => scrollToSection("rooms")}
               className="inline-flex items-center justify-center bg-[#ffb400] hover:bg-[#e6a200] text-black font-bold text-xs sm:text-sm px-7 py-3 rounded-xs shadow-lg transition-all duration-200 uppercase tracking-wider cursor-pointer"
+            >
+              View Rooms & Stays
+            </button>
+            <button
+              onClick={() => scrollToSection("explore")}
+              className="inline-flex items-center justify-center bg-white/15 hover:bg-white/25 text-white border border-white/40 font-semibold text-xs sm:text-sm px-6 py-3 rounded-xs transition duration-200 uppercase tracking-wider cursor-pointer backdrop-blur-sm"
             >
               Explore Munnar Sights
             </button>
             <button
               onClick={() => scrollToSection("contact")}
-              className="inline-flex items-center justify-center bg-white/15 hover:bg-white/25 text-white border border-white/40 font-semibold text-xs sm:text-sm px-6 py-3 rounded-xs transition duration-200 uppercase tracking-wider cursor-pointer backdrop-blur-sm"
+              className="inline-flex items-center justify-center bg-black/40 hover:bg-black/60 text-white border border-white/20 font-semibold text-xs sm:text-sm px-6 py-3 rounded-xs transition duration-200 uppercase tracking-wider cursor-pointer backdrop-blur-sm"
             >
-              Book Rooms & Tours
+              Book Tours
             </button>
           </div>
         </div>
@@ -511,7 +520,21 @@ export default function SinglePageApp() {
       </section>
 
       {/* =========================================================================
-          SECTION 3: EXPLORE IDUKKI (Key Attractions & Field Guide)
+          SECTION 3: ROOMS & ACCOMMODATIONS SHOWCASE
+          ========================================================================= */}
+      <RoomsSection
+        onSelectRoomForInquiry={(roomTitle) => {
+          setContactForm((prev) => ({
+            ...prev,
+            service: roomTitle,
+            message: `Hi, I am interested in reserving the ${roomTitle}. Please let me know the availability, check-in procedure, and special packages for my dates.`,
+          }));
+          scrollToSection("contact");
+        }}
+      />
+
+      {/* =========================================================================
+          SECTION 4: EXPLORE IDUKKI (Key Attractions & Field Guide)
           ========================================================================= */}
       <section id="explore" className="relative w-full py-16 sm:py-24 bg-white border-t border-stone-200/80">
         <div className="max-w-7xl mx-auto px-6 sm:px-12">
@@ -748,11 +771,11 @@ export default function SinglePageApp() {
                       onChange={(e) => setContactForm({ ...contactForm, service: e.target.value })}
                       className="w-full px-4 py-2.5 text-xs sm:text-sm border border-stone-300 rounded-xl focus:border-black focus:ring-1 focus:ring-black outline-none bg-white"
                     >
-                      <option value="Room Stay (Standard / Deluxe)">🛏️ Comfortable Room Stay (Standard / Deluxe)</option>
+                      <option value="Room Stay with Hill Pool Access">🛏️ Room Stay (with Hill Pool Access)</option>
+                      <option value="Room Stay + Munnar Sightseeing Combo">🌟 Room Stay + Munnar Sightseeing Combo</option>
                       <option value="Munnar Full-Day Sightseeing Package">🌄 Munnar Full-Day Sightseeing Package</option>
                       <option value="Valara & Cheeyappara Waterfalls Tour">🌊 Valara & Waterfalls Scenic Tour</option>
-                      <option value="Room Stay + Sightseeing Combo">✨ Room Stay + Sightseeing Combo</option>
-                      <option value="Custom Family & Group Package">👥 Custom Family & Group Holiday Package</option>
+                      <option value="Family / Group Holiday Package">👨‍👩‍👧‍👦 Family / Group Holiday Package</option>
                     </select>
                   </div>
 
@@ -991,6 +1014,7 @@ export default function SinglePageApp() {
             <ul className="space-y-2 text-xs text-white/70">
               <li><button onClick={() => scrollToSection("home")} className="hover:text-white transition cursor-pointer">Home</button></li>
               <li><button onClick={() => scrollToSection("about")} className="hover:text-white transition cursor-pointer">About Us</button></li>
+              <li><button onClick={() => scrollToSection("rooms")} className="hover:text-white transition cursor-pointer">Rooms & Stays</button></li>
               <li><button onClick={() => scrollToSection("explore")} className="hover:text-white transition cursor-pointer">Explore</button></li>
               <li><button onClick={() => scrollToSection("gallery")} className="hover:text-white transition cursor-pointer">Gallery</button></li>
               <li><button onClick={() => scrollToSection("contact")} className="hover:text-white transition cursor-pointer">Contact</button></li>
@@ -1002,7 +1026,7 @@ export default function SinglePageApp() {
               Rooms & Packages
             </h4>
             <ul className="space-y-2 text-xs text-white/70">
-              <li>Cozy Standard & Deluxe Rooms</li>
+              <li>Room Stay with Hill Pool Access</li>
               <li>Munnar Full-Day Sightseeing Tour</li>
               <li>Valara & Waterfalls Scenic Tour</li>
               <li>Room Stay + Sightseeing Combo</li>
