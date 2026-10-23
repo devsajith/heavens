@@ -18,7 +18,7 @@ export default function AttractionsSection() {
             <span>Wilderness Trail Guide · Idukki & Adimali</span>
           </div>
           <h2 className="text-2xl sm:text-4xl font-black text-stone-900 tracking-tight">
-            8 Scenic Natural Attractions: <span className="text-[#b85d2a]">Waterfalls & Mountain Trails</span>
+            Top 10 Scenic Attractions: <span className="text-[#b85d2a]">Waterfalls, Safaris & Viewpoints</span>
           </h2>
           <p className="text-xs sm:text-sm text-stone-600 mt-2 max-w-2xl leading-relaxed">
             From cascading jungle waterfalls to high-altitude peaks and wild elephant habitats along Highway 85 and Mamalakandam.
@@ -74,7 +74,7 @@ export default function AttractionsSection() {
                 </h4>
 
                 <p className="text-xs text-stone-500 line-clamp-2 leading-relaxed">
-                  {att.description}
+                  {att.desc || att.description}
                 </p>
 
                 {/* Highlight Pills */}

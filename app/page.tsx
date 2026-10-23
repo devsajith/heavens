@@ -43,87 +43,115 @@ import {
 const IDUKKI_ATTRACTIONS = [
   {
     number: "01",
-    title: "Kuthirakuthi View Point",
-    category: "Hilltop Panorama",
-    desc: "360-degree misty viewpoint overlooking emerald tea valleys and rolling Idukki mountain ridges in Adimali.",
-    image: "/explore/kuthirakuthi.webp",
-    dist: "4.2 km from Basecamp",
-    highlights: ["Sunrise & Sunset", "Panoramic Valley", "Photo Spot"],
+    title: "Elephant Safari",
+    category: "Wildlife Experience",
+    desc: "Experience a thrilling and safe elephant ride through serene nature pathways guided by expert mahouts.",
+    image: "/explore/elepsafari.webp",
+    highlights: ["Safe Elephant Ride", "Nature Pathway", "Family Friendly"],
   },
   {
     number: "02",
-    title: "Varayadin Mudi Rocky Peak",
-    category: "High Altitude Peak",
-    desc: "Majestic rocky mountain peak renowned for Nilgiri Tahr mountain goat sightings and high-altitude wilderness trekking.",
-    image: "/explore/varayadinmudi.webp",
-    dist: "9.5 km from Basecamp",
-    highlights: ["Nilgiri Tahr", "Peak Trekking", "Mist Canopy"],
+    title: "Kuthirakuthi View Point",
+    category: "Hilltop Sunset View",
+    desc: "Off-road jeep journey to a spectacular hilltop vantage point. Planning your visit for sunset offers an unforgettable golden panorama.",
+    image: "/explore/kuthirakuthi.webp",
+    highlights: ["Off-Road Jeep Trail", "Sunset Viewpoint", "360° Valley Panorama"],
   },
   {
     number: "03",
-    title: "Valara Waterfalls & View Point",
-    category: "Jungle Waterfall",
-    desc: "Iconic natural waterfalls tumbling down dense jungle cliff faces directly along the scenic Highway 85 corridor.",
-    image: "/explore/valara.webp",
-    dist: "7.8 km from Basecamp",
-    highlights: ["Jungle Cascade", "Highway 85 Stop", "Valley View"],
+    title: "Varayadin Mudi ViewPoint",
+    category: "High Altitude Peak",
+    desc: "Majestic rocky mountain peak known for sweeping valley mist and occasional sightings of the endangered Nilgiri Tahr (Varayadu).",
+    image: "/explore/varayadinmudi.webp",
+    highlights: ["Nilgiri Tahr Spotting", "Rocky Mountain Peak", "Cloud Sea Canopy"],
   },
   {
     number: "04",
-    title: "Thalamaan Waterfalls",
-    category: "Hidden Cascade",
-    desc: "Hidden natural waterfall sanctuary deep inside the forest with refreshing crystalline wading pools and tropical flora.",
-    image: "/explore/thalaman.webp",
-    dist: "8.5 km from Basecamp",
-    highlights: ["Natural Pool Dip", "Secret Jungle Stream", "Untamed Nature"],
+    title: "Mudippara Pine Forest",
+    category: "Pine Woods & Lake",
+    desc: "Scenic off-road drive up into dense, fragrant pine woods enclosing a tranquil secluded mountain lake.",
+    image: "/explore/pineforest.webp",
+    highlights: ["Off-Road to Pines", "Mountain Lake", "Evergreen Forest"],
   },
   {
     number: "05",
-    title: "Cheeyappara Cascades",
-    category: "7-Tier Waterfall",
-    desc: "Spectacular 7-tiered cascading waterfalls thundering over rugged rock beds right beside Highway 85.",
-    image: "/explore/cheeypparabath.webp",
-    dist: "11 km from Basecamp",
-    highlights: ["7-Tier Waterfall", "Roadside Scenic Stop", "Water Cascades"],
+    title: "Valara Waterfall View Point",
+    category: "Jungle Waterfall",
+    desc: "Exciting jeep ride to a stunning vantage point overlooking the mighty Valara waterfalls tumbling over rocky jungle cliffs.",
+    image: "/explore/valaraView.webp",
+    highlights: ["Jeep Ride to Viewpoint", "Cascading Falls", "Lush Valley Backdrop"],
   },
   {
     number: "06",
-    title: "Anakkulam Elephant River",
-    category: "Wildlife Phenomenon",
-    desc: "World-renowned riverbank where herds of wild elephants emerge from the deep forest to drink the mineral-rich bubbling stream water.",
-    image: "/explore/anakkulam.webp",
-    dist: "Scenic Day Tour",
-    highlights: ["Wild Elephant Herds", "Natural Mineral Stream", "Untouched Forest"],
+    title: "Thalamaan Waterfall",
+    category: "Jungle Trekking",
+    desc: "Adventure trekking through lush tropical forest trails leading to an untamed hidden waterfall with crystalline natural wading pools.",
+    image: "/explore/thalamanfalls.webp",
+    highlights: ["Forest Trekking Trail", "Secluded Cascade", "Natural Pool Dip"],
   },
   {
     number: "07",
-    title: "Muthikkadu Lake & Hilltop",
-    category: "Serene Lake & Valley",
-    desc: "Tranquil mountain lake surrounded by lush green slopes, mist-covered hills, and peaceful natural reflection waters.",
-    image: "/explore/muthikkadulake.webp",
-    dist: "Scenic Tour Route",
-    highlights: ["Calm Waters", "Misty Hills", "Nature Walks"],
+    title: "Cheeyappara Bathing Point",
+    category: "Natural River Bath",
+    desc: "Take a refreshing natural river bath right beneath the roaring multi-tiered Cheeyappara waterfalls along Highway 85.",
+    image: "/explore/cheeypparabath.webp",
+    highlights: ["Natural River Bath", "7-Tier Cascades", "Highway 85 Stop"],
   },
   {
     number: "08",
-    title: "4x4 Off-Road Jeep Safari Trail",
-    category: "Off-Road Expedition",
-    desc: "Thrilling 4x4 open jeep safari traversing rugged boulder tracks, hidden mountain streams, and remote tea plantation routes.",
-    image: "/explore/jeep.webp",
-    dist: "Guided Safari Route",
-    highlights: ["Rugged 4x4 Trail", "Stream Crossing", "Plantation Trails"],
+    title: "Mamalakandam Forest Safari",
+    category: "Forest Jeep Safari",
+    desc: "Rugged 4x4 open jeep safari traversing deep wilderness trails, featuring the renowned Mamalakandam forest school and roaring waterfalls.",
+    image: "/explore/mamalasafari.webp",
+    highlights: ["4x4 Forest Safari", "Mamalakandam School", "Jungle Waterfalls"],
+  },
+  {
+    number: "09",
+    title: "Anakkulam Wild Elephant Stream",
+    category: "Wild Elephant Corridor",
+    desc: "World-famous riverbank where wild elephants gather from dense forests to drink bubbling mineral-rich stream water, safely viewable from across the river.",
+    image: "/explore/anakkulam.webp",
+    highlights: ["Watch Wild Elephants Safely", "Mineral Stream", "Untouched Forest"],
+  },
+  {
+    number: "10",
+    title: "Munnar Special Packages",
+    category: "Curated Munnar Tours",
+    desc: "Personalized full-day and multi-day Munnar sightseeing packages covering world-famous tea gardens, viewpoints, dams, and spice plantations.",
+    image: "/explore/munnar.webp",
+    highlights: ["Munnar Tea Gardens", "Driver & Cab Included", "Custom Holiday Route"],
   },
 ];
 
 const GALLERY_PICTURES = [
-  { src: "/explore/jeep2.webp", title: "4x4 Mountain Jeep Safari", tag: "Safari" },
-  { src: "/explore/thalamanfalls.webp", title: "Thalamaan Cascading Pools", tag: "Waterfalls" },
-  { src: "/explore/valara2.webp", title: "Valara Jungle Falls View", tag: "Waterfalls" },
-  { src: "/explore/muthikkadu.webp", title: "Muthikkadu Mountain Views", tag: "Viewpoint" },
-  { src: "/explore/anakkulam.webp", title: "Anakkulam Wild Elephant Stream", tag: "Wildlife" },
-  { src: "/explore/kuthirakuthi.webp", title: "Kuthirakuthi Panorama", tag: "Viewpoint" },
-  { src: "/explore/cheeypparabath.webp", title: "Cheeyappara 7-Tier Cascade", tag: "Waterfalls" },
-  { src: "/explore/varayadinmudi.webp", title: "Varayadin Mudi Rocky Peak", tag: "High Altitude" },
+  { src: "/galary/gal1.webp", title: "Misty Mountain Safari", tag: "Safari" },
+  { src: "/galary/gal2.webp", title: "Off-Road Forest Trail", tag: "Adventure" },
+  { src: "/galary/gal3.webp", title: "Highland Valley Vistas", tag: "Viewpoint" },
+  { src: "/galary/gal4.webp", title: "Pine Valley Exploration", tag: "Nature" },
+  { src: "/galary/gal5.webp", title: "Mountain Peak Dawn", tag: "Sunrise" },
+  { src: "/galary/gal6.webp", title: "Heavens Holiday Moments", tag: "Resort Life" },
+  { src: "/galary/gal7.webp", title: "Rocky Cliff Horizon", tag: "Trek" },
+  { src: "/galary/gal8.webp", title: "Jungle Stream Crossing", tag: "Wild Trail" },
+  { src: "/galary/gal9.webp", title: "Munnar Tea Slopes", tag: "Valleys" },
+  { src: "/galary/gal10.webp", title: "Sunset Over Misty Hills", tag: "Sunset" },
+  { src: "/galary/gal11.webp", title: "Scenic Hill Highway", tag: "Journey" },
+  { src: "/galary/gal12.webp", title: "Golden Hour Viewpoint", tag: "Sunset View" },
+  { src: "/galary/gal13.webp", title: "High Altitude Overlook", tag: "Panorama" },
+  { src: "/galary/gal14.webp", title: "Tour Group Safari Gathering", tag: "Expedition" },
+  { src: "/galary/gal15.webp", title: "Verdant Hillside Escapes", tag: "Scenery" },
+  { src: "/galary/gal16.webp", title: "Wilderness Trekking Trail", tag: "Trekking" },
+  { src: "/galary/gal17.webp", title: "Mountain Crest Explorers", tag: "Highland" },
+  { src: "/galary/gal19.webp", title: "Deep Forest Pathway", tag: "Nature Walk" },
+  { src: "/galary/gal20.webp", title: "Panoramic Mountain Lookout", tag: "Viewpoint" },
+  { src: "/galary/gal22.webp", title: "Misty Cliff Edge", tag: "Vistas" },
+  { src: "/galary/gal23.webp", title: "Holiday Memories at Heavens", tag: "Guest Diary" },
+  { src: "/galary/gal30.webp", title: "Heavens 4x4 Jeep Safari", tag: "4x4 Safari" },
+  { src: "/galary/gal31.webp", title: "Sunset Cliff Vantage Point", tag: "Sunset" },
+  { src: "/galary/gal33.webp", title: "High Peak Escapade", tag: "Landscape" },
+  { src: "/galary/elephant.webp", title: "Elephant Safari Adventure", tag: "Wildlife" },
+  { src: "/galary/elephant2.webp", title: "Gentle Giant Experience", tag: "Wildlife" },
+  { src: "/galary/jeep.webp", title: "Heavens 4x4 Mountain Jeep", tag: "Off-Road" },
+  { src: "/galary/jeep2.webp", title: "Safari Expedition Vehicle", tag: "4x4 Tour" },
 ];
 
 const FAQS = [
@@ -163,9 +191,40 @@ export default function SinglePageApp() {
   });
   const [contactSuccess, setContactSuccess] = useState(false);
 
+  const currentLightboxIndex = lightboxImg 
+    ? GALLERY_PICTURES.findIndex((p) => p.src === lightboxImg) 
+    : -1;
+
+  const showPrevLightbox = () => {
+    if (currentLightboxIndex > 0) {
+      setLightboxImg(GALLERY_PICTURES[currentLightboxIndex - 1].src);
+    } else if (currentLightboxIndex === 0) {
+      setLightboxImg(GALLERY_PICTURES[GALLERY_PICTURES.length - 1].src);
+    }
+  };
+
+  const showNextLightbox = () => {
+    if (currentLightboxIndex >= 0 && currentLightboxIndex < GALLERY_PICTURES.length - 1) {
+      setLightboxImg(GALLERY_PICTURES[currentLightboxIndex + 1].src);
+    } else if (currentLightboxIndex === GALLERY_PICTURES.length - 1) {
+      setLightboxImg(GALLERY_PICTURES[0].src);
+    }
+  };
+
+  useEffect(() => {
+    if (!lightboxImg) return;
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (e.key === "Escape") setLightboxImg(null);
+      if (e.key === "ArrowLeft") showPrevLightbox();
+      if (e.key === "ArrowRight") showNextLightbox();
+    };
+    window.addEventListener("keydown", handleKeyDown);
+    return () => window.removeEventListener("keydown", handleKeyDown);
+  }, [lightboxImg, currentLightboxIndex]);
+
   // Scrollspy observer & dynamic scroll tracking
   useEffect(() => {
-    const sectionIds = ["home", "about", "rooms", "explore", "gallery", "contact"];
+    const sectionIds = ["home", "about", "rooms", "attractions", "gallery", "contact"];
     const handleScroll = () => {
       const currentScrollY = window.scrollY;
       setScrollY(currentScrollY);
@@ -258,7 +317,7 @@ export default function SinglePageApp() {
               { id: "home", label: "Home" },
               { id: "about", label: "About" },
               { id: "rooms", label: "Rooms & Stays" },
-              { id: "explore", label: "Explore" },
+              { id: "attractions", label: "Attractions" },
               { id: "gallery", label: "Gallery" },
               { id: "contact", label: "Contact" },
             ].map((nav) => {
@@ -308,7 +367,7 @@ export default function SinglePageApp() {
               { id: "home", label: "Home" },
               { id: "about", label: "About" },
               { id: "rooms", label: "Rooms & Stays" },
-              { id: "explore", label: "Explore" },
+              { id: "attractions", label: "Attractions" },
               { id: "gallery", label: "Gallery" },
               { id: "contact", label: "Contact" },
             ].map((nav) => (
@@ -366,15 +425,11 @@ export default function SinglePageApp() {
             opacity: Math.max(0, 1 - scrollY / 650),
           }}
         >
-          <span className="inline-flex items-center gap-1.5 px-4 py-1 rounded-full text-[11px] sm:text-xs font-bold tracking-widest uppercase bg-black/40 backdrop-blur-md border border-white/20 text-[#ffb400] mb-3 shadow-xs">
-            Welcome to Munnar
-          </span>
-
-          <h1 className="text-3xl sm:text-5xl md:text-6xl font-extrabold text-white tracking-tight leading-[1.1] mb-3 drop-shadow-lg">
+          <h1 className="text-3xl sm:text-5xl md:text-6xl font-extrabold text-white tracking-tight leading-[1.1] mb-4 drop-shadow-lg">
             Heavens Munnar Holiday Resort
           </h1>
 
-          <p className="text-xs sm:text-sm md:text-base text-white/90 max-w-xl mx-auto mb-6 font-light tracking-wide drop-shadow-md">
+          <p className="text-xs sm:text-sm md:text-base text-white/90 max-w-xl mx-auto mb-6 font-light tracking-wide drop-shadow-md text-justify">
             Comfortable room stays and customized sightseeing packages across Munnar, cascading waterfalls, tea hills, and scenic mountain destinations.
           </p>
 
@@ -386,10 +441,10 @@ export default function SinglePageApp() {
               View Rooms & Stays
             </button>
             <button
-              onClick={() => scrollToSection("explore")}
+              onClick={() => scrollToSection("attractions")}
               className="inline-flex items-center justify-center bg-white/15 hover:bg-white/25 text-white border border-white/40 font-semibold text-xs sm:text-sm px-6 py-3 rounded-xs transition duration-200 uppercase tracking-wider cursor-pointer backdrop-blur-sm"
             >
-              Explore Munnar Sights
+              Top Attractions
             </button>
             <button
               onClick={() => scrollToSection("contact")}
@@ -428,10 +483,10 @@ export default function SinglePageApp() {
               </h2>
               <div className="w-16 h-1 bg-[#ffb400] mb-6 rounded-full" />
 
-              <p className="text-sm text-[#555555] leading-relaxed mb-4">
+              <p className="text-sm text-[#555555] leading-relaxed mb-4 text-justify">
                 Conveniently located near Jacobite Church in Valara along Highway 85 on the scenic corridor to Munnar, <strong>Heavens Munnar Holiday Resort</strong> is a trusted rooms provider and sightseeing package planner for travellers, families, and couples visiting the Western Ghats.
               </p>
-              <p className="text-sm text-[#555555] leading-relaxed mb-6">
+              <p className="text-sm text-[#555555] leading-relaxed mb-6 text-justify">
                 We combine clean, relaxing room accommodations with curated sightseeing packages covering Munnar tea valleys, misty viewpoints, majestic waterfalls (Valara & Cheeyappara), pine reserves, and safari trails. Everything is planned smoothly so you can enjoy your holiday with complete peace of mind.
               </p>
 
@@ -481,7 +536,7 @@ export default function SinglePageApp() {
                 <Bed className="w-5 h-5" />
               </div>
               <h4 className="font-bold text-base text-[#111111] mb-2">Clean & Cozy Rooms</h4>
-              <p className="text-xs text-[#666666] leading-relaxed">
+              <p className="text-xs text-[#666666] leading-relaxed text-justify">
                 Well-appointed, peaceful room accommodations equipped with cozy bedding, clean amenities, and scenic greenery.
               </p>
             </div>
@@ -491,7 +546,7 @@ export default function SinglePageApp() {
                 <Compass className="w-5 h-5" />
               </div>
               <h4 className="font-bold text-base text-[#111111] mb-2">Munnar Sightseeing Packages</h4>
-              <p className="text-xs text-[#666666] leading-relaxed">
+              <p className="text-xs text-[#666666] leading-relaxed text-justify">
                 Full-day and multi-day sightseeing tours visiting rolling tea gardens, viewpoints, mountain dams, and cool valleys.
               </p>
             </div>
@@ -501,7 +556,7 @@ export default function SinglePageApp() {
                 <Waves className="w-5 h-5" />
               </div>
               <h4 className="font-bold text-base text-[#111111] mb-2">Waterfalls & Nature Trails</h4>
-              <p className="text-xs text-[#666666] leading-relaxed">
+              <p className="text-xs text-[#666666] leading-relaxed text-justify">
                 Close proximity to Valara & Cheeyappara waterfalls, Thalamaan cascades, and Mudippara pine forest walks.
               </p>
             </div>
@@ -511,7 +566,7 @@ export default function SinglePageApp() {
                 <ShieldCheck className="w-5 h-5" />
               </div>
               <h4 className="font-bold text-base text-[#111111] mb-2">Custom Holiday Support</h4>
-              <p className="text-xs text-[#666666] leading-relaxed">
+              <p className="text-xs text-[#666666] leading-relaxed text-justify">
                 Experienced local route planners and driver-guides catering to families, couples, and holiday groups.
               </p>
             </div>
@@ -534,21 +589,21 @@ export default function SinglePageApp() {
       />
 
       {/* =========================================================================
-          SECTION 4: EXPLORE IDUKKI (Key Attractions & Field Guide)
+          SECTION 4: ATTRACTIONS (Key Attractions & Field Guide)
           ========================================================================= */}
-      <section id="explore" className="relative w-full py-16 sm:py-24 bg-white border-t border-stone-200/80">
+      <section id="attractions" className="relative w-full py-16 sm:py-24 bg-white border-t border-stone-200/80">
         <div className="max-w-7xl mx-auto px-6 sm:px-12">
           <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-6 mb-14">
             <div>
               <div className="flex items-center gap-2 text-[#00a896] text-xs sm:text-sm font-bold uppercase tracking-wider mb-1">
                 <Compass className="w-4 h-4 text-[#00a896]" />
-                <span>Field Guide · Scenic Attractions</span>
+                <span>Field Guide · Top 10 Attractions</span>
               </div>
               <h2 className="text-3xl sm:text-5xl font-extrabold text-[#111111] tracking-tight">
-                Explore Idukki & Adimali
+                Top Munnar & Adimali Attractions
               </h2>
-              <p className="text-xs sm:text-sm text-[#717171] mt-2 max-w-xl">
-                The iconic viewpoints, cascading waterfalls, evergreen pine forests, and wild elephant corridors around our Valara basecamp.
+              <p className="text-xs sm:text-sm text-[#717171] mt-2 max-w-xl text-justify">
+                The top 10 viewpoints, cascading waterfalls, wild elephant streams, pine forests, and thrilling forest safaris around our Valara basecamp.
               </p>
             </div>
 
@@ -562,7 +617,7 @@ export default function SinglePageApp() {
           </div>
 
           {/* Attractions Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-16">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-6 mb-16">
             {IDUKKI_ATTRACTIONS.map((att) => (
               <div
                 key={att.number}
@@ -586,7 +641,7 @@ export default function SinglePageApp() {
                   <h4 className="font-bold text-base text-[#111111] mb-2 group-hover:text-[#00a896] transition">
                     {att.title}
                   </h4>
-                  <p className="text-xs text-[#666666] leading-relaxed mb-3 flex-1">
+                  <p className="text-xs text-[#666666] leading-relaxed mb-3 flex-1 text-justify">
                     {att.desc}
                   </p>
 
@@ -604,11 +659,7 @@ export default function SinglePageApp() {
                     </div>
                   )}
 
-                  <div className="pt-3 border-t border-stone-200/60 flex items-center justify-between text-[11px] font-semibold text-stone-500">
-                    <span className="flex items-center gap-1">
-                      <MapPin className="w-3.5 h-3.5 text-[#ffb400]" />
-                      {att.dist}
-                    </span>
+                  <div className="pt-3 border-t border-stone-200/60 flex items-center justify-end text-[11px] font-semibold text-stone-500">
                     <button
                       onClick={() => scrollToSection("contact")}
                       className="text-[#12231b] hover:text-[#00a896] transition font-bold"
@@ -630,7 +681,7 @@ export default function SinglePageApp() {
               <h3 className="text-2xl sm:text-3xl font-extrabold mb-3">
                 Munnar & Nearby Scenic Tour Packages
               </h3>
-              <p className="text-xs sm:text-sm text-white/80 leading-relaxed font-light">
+              <p className="text-xs sm:text-sm text-white/80 leading-relaxed font-light text-justify">
                 Stay comfortably at Heavens Munnar Holiday Resort near Valara and explore Munnar's best tea plantations, viewpoints, and waterfalls with customized sightseeing packages.
               </p>
             </div>
@@ -669,13 +720,13 @@ export default function SinglePageApp() {
             <h2 className="text-3xl sm:text-5xl font-extrabold text-[#111111] tracking-tight">
               Photo Gallery
             </h2>
-            <p className="text-xs sm:text-sm text-[#717171] mt-2">
+            <p className="text-xs sm:text-sm text-[#717171] mt-2 text-justify">
               Glimpses of comfortable rooms, scenic Munnar valleys, cascading waterfalls, and memorable holiday experiences.
             </p>
           </div>
 
           {/* Photo Masonry Grid */}
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6">
+          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-3 sm:gap-5">
             {GALLERY_PICTURES.map((pic, idx) => (
               <div
                 key={idx}
@@ -686,6 +737,7 @@ export default function SinglePageApp() {
                   src={pic.src}
                   alt={pic.title}
                   className="w-full h-full object-cover group-hover:scale-110 transition duration-500"
+                  loading="lazy"
                 />
                 <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-4 text-white">
                   <span className="text-[10px] font-bold uppercase tracking-wider text-[#ffb400]">
@@ -717,7 +769,7 @@ export default function SinglePageApp() {
             <h2 className="text-3xl sm:text-5xl font-extrabold text-[#111111] tracking-tight">
               Contact Heavens Munnar Holiday Resort
             </h2>
-            <p className="text-xs sm:text-sm text-[#717171] mt-2">
+            <p className="text-xs sm:text-sm text-[#717171] mt-2 text-justify">
               Book your comfortable room stay and curated sightseeing packages in Munnar and nearby locations directly with our team.
             </p>
           </div>
@@ -771,7 +823,7 @@ export default function SinglePageApp() {
                       onChange={(e) => setContactForm({ ...contactForm, service: e.target.value })}
                       className="w-full px-4 py-2.5 text-xs sm:text-sm border border-stone-300 rounded-xl focus:border-black focus:ring-1 focus:ring-black outline-none bg-white"
                     >
-                      <option value="Room Stay with Hill Pool Access">🛏️ Room Stay (with Hill Pool Access)</option>
+                      <option value="Room Stay with Pool Access">🛏️ Room Stay (with Pool Access)</option>
                       <option value="Room Stay + Munnar Sightseeing Combo">🌟 Room Stay + Munnar Sightseeing Combo</option>
                       <option value="Munnar Full-Day Sightseeing Package">🌄 Munnar Full-Day Sightseeing Package</option>
                       <option value="Valara & Cheeyappara Waterfalls Tour">🌊 Valara & Waterfalls Scenic Tour</option>
@@ -965,7 +1017,7 @@ export default function SinglePageApp() {
                       />
                     </div>
                     {isOpen && (
-                      <p className="mt-3 text-xs sm:text-sm text-stone-600 font-light leading-relaxed border-t border-stone-200/60 pt-3">
+                      <p className="mt-3 text-xs sm:text-sm text-stone-600 font-light leading-relaxed border-t border-stone-200/60 pt-3 text-justify">
                         {faq.a}
                       </p>
                     )}
@@ -989,7 +1041,7 @@ export default function SinglePageApp() {
             <span className="text-[11px] font-bold text-[#00a896] uppercase tracking-wider block mb-4">
               Munnar Holiday Resort
             </span>
-            <p className="text-xs text-white/70 leading-relaxed max-w-xs mb-4">
+            <p className="text-xs text-white/70 leading-relaxed max-w-xs mb-4 text-justify">
               Quality room accommodations and curated Munnar sightseeing packages. Located conveniently on Highway 85 in Valara, Adimali, your gateway to Munnar's iconic tea gardens and waterfalls.
             </p>
             <p className="text-xs text-white/60 leading-relaxed">
@@ -1015,7 +1067,7 @@ export default function SinglePageApp() {
               <li><button onClick={() => scrollToSection("home")} className="hover:text-white transition cursor-pointer">Home</button></li>
               <li><button onClick={() => scrollToSection("about")} className="hover:text-white transition cursor-pointer">About Us</button></li>
               <li><button onClick={() => scrollToSection("rooms")} className="hover:text-white transition cursor-pointer">Rooms & Stays</button></li>
-              <li><button onClick={() => scrollToSection("explore")} className="hover:text-white transition cursor-pointer">Explore</button></li>
+              <li><button onClick={() => scrollToSection("attractions")} className="hover:text-white transition cursor-pointer">Attractions</button></li>
               <li><button onClick={() => scrollToSection("gallery")} className="hover:text-white transition cursor-pointer">Gallery</button></li>
               <li><button onClick={() => scrollToSection("contact")} className="hover:text-white transition cursor-pointer">Contact</button></li>
             </ul>
@@ -1026,7 +1078,7 @@ export default function SinglePageApp() {
               Rooms & Packages
             </h4>
             <ul className="space-y-2 text-xs text-white/70">
-              <li>Room Stay with Hill Pool Access</li>
+              <li>Room Stay with Swimming Pool</li>
               <li>Munnar Full-Day Sightseeing Tour</li>
               <li>Valara & Waterfalls Scenic Tour</li>
               <li>Room Stay + Sightseeing Combo</li>
@@ -1076,21 +1128,66 @@ export default function SinglePageApp() {
           ========================================================================= */}
       {lightboxImg && (
         <div
-          className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/90 backdrop-blur-md animate-in fade-in"
+          className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/95 backdrop-blur-md animate-in fade-in"
           onClick={() => setLightboxImg(null)}
         >
+          {/* Close button */}
           <button
             onClick={() => setLightboxImg(null)}
-            className="absolute top-5 right-5 p-3 rounded-full bg-white/10 text-white hover:bg-white/20 transition cursor-pointer"
+            className="absolute top-5 right-5 p-3 rounded-full bg-white/10 hover:bg-white/20 text-white transition cursor-pointer z-10"
+            aria-label="Close"
           >
             <X className="w-6 h-6" />
           </button>
-          <img
-            src={lightboxImg}
-            alt="Enlarged photo"
-            className="max-h-[85vh] max-w-[90vw] object-contain rounded-xl shadow-2xl"
+
+          {/* Previous image button */}
+          <button
+            onClick={(e) => {
+              e.stopPropagation();
+              showPrevLightbox();
+            }}
+            className="absolute left-3 sm:left-6 top-1/2 -translate-y-1/2 p-3 rounded-full bg-white/10 hover:bg-white/25 text-white transition cursor-pointer z-10"
+            aria-label="Previous image"
+          >
+            <ChevronLeft className="w-6 h-6" />
+          </button>
+
+          {/* Next image button */}
+          <button
+            onClick={(e) => {
+              e.stopPropagation();
+              showNextLightbox();
+            }}
+            className="absolute right-3 sm:right-6 top-1/2 -translate-y-1/2 p-3 rounded-full bg-white/10 hover:bg-white/25 text-white transition cursor-pointer z-10"
+            aria-label="Next image"
+          >
+            <ChevronRight className="w-6 h-6" />
+          </button>
+
+          {/* Image & Caption Container */}
+          <div
+            className="relative flex flex-col items-center max-w-full max-h-full"
             onClick={(e) => e.stopPropagation()}
-          />
+          >
+            <img
+              src={lightboxImg}
+              alt={currentLightboxIndex !== -1 ? GALLERY_PICTURES[currentLightboxIndex].title : "Enlarged photo"}
+              className="max-h-[78vh] max-w-[90vw] object-contain rounded-xl shadow-2xl"
+            />
+            {currentLightboxIndex !== -1 && (
+              <div className="mt-3 text-center text-white">
+                <span className="text-[11px] font-bold uppercase tracking-wider text-[#ffb400] block">
+                  {GALLERY_PICTURES[currentLightboxIndex].tag}
+                </span>
+                <p className="text-sm sm:text-base font-semibold mt-0.5">
+                  {GALLERY_PICTURES[currentLightboxIndex].title}
+                </p>
+                <p className="text-xs text-stone-400 mt-1">
+                  {currentLightboxIndex + 1} of {GALLERY_PICTURES.length}
+                </p>
+              </div>
+            )}
+          </div>
         </div>
       )}
 
