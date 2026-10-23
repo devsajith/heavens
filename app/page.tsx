@@ -186,7 +186,6 @@ export default function SinglePageApp() {
   const [contactForm, setContactForm] = useState({
     name: "",
     phone: "",
-    service: "Room Stay & Munnar Sightseeing Combo",
     message: "",
   });
   const [contactSuccess, setContactSuccess] = useState(false);
@@ -271,7 +270,6 @@ export default function SinglePageApp() {
       setContactForm({
         name: "",
         phone: "",
-        service: "Room Stay & Munnar Sightseeing Combo",
         message: "",
       });
     }, 3500);
@@ -288,38 +286,58 @@ export default function SinglePageApp() {
       </div>
 
       {/* =========================================================================
-          HERO SECTION NAVBAR (Non-sticky, Hero Only)
+          NAVBAR: FULL HERO HEADER -> COMPACT SLIM WHITE BAR ON SCROLL
           ========================================================================= */}
       <header
-        className={`absolute top-0 left-0 right-0 z-40 transition-all duration-300 ${
-          mobileMenuOpen
+        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+          isScrolled
+            ? "bg-white/95 backdrop-blur-md border-b border-stone-200/90 shadow-xs"
+            : mobileMenuOpen
             ? "bg-[#12231b] border-b border-white/10 shadow-lg"
-            : "bg-gradient-to-b from-black/75 via-black/35 to-transparent border-b border-transparent"
+            : "bg-gradient-to-b from-black/80 via-black/40 to-transparent border-b border-transparent"
         }`}
       >
-        <div className="max-w-7xl mx-auto px-6 sm:px-12 h-20 flex items-center justify-between">
+        <div
+          className={`max-w-7xl mx-auto px-6 sm:px-12 flex items-center justify-between transition-all duration-300 ${
+            isScrolled ? "h-14" : "h-20"
+          }`}
+        >
           {/* Logo with Emblem Image */}
           <button
             onClick={() => scrollToSection("home")}
-            className="flex items-center gap-3 text-white group cursor-pointer text-left"
+            className="flex items-center gap-2.5 sm:gap-3 group cursor-pointer text-left"
           >
             <img
               src="/galary/logo.webp"
               alt="Heavens Munnar Holiday Resort Logo"
-              className="h-11 sm:h-12 w-auto object-contain drop-shadow-md rounded-md group-hover:scale-105 transition-transform duration-300"
+              className={`w-auto object-contain drop-shadow-xs rounded-md transition-all duration-300 ${
+                isScrolled ? "h-8 sm:h-9" : "h-11 sm:h-12"
+              }`}
             />
             <div className="flex flex-col">
-              <span className="text-xl sm:text-2xl font-extrabold tracking-tight leading-none text-white drop-shadow-xs">
+              <span
+                className={`font-extrabold tracking-tight leading-none transition-colors duration-300 ${
+                  isScrolled
+                    ? "text-stone-900 text-base sm:text-lg"
+                    : "text-white text-xl sm:text-2xl drop-shadow-xs"
+                }`}
+              >
                 Heavens<span className="text-[#ffb400]">.</span>
               </span>
-              <span className="text-[10px] sm:text-xs font-semibold tracking-wider text-white/85 uppercase mt-0.5">
+              <span
+                className={`font-semibold tracking-wider uppercase mt-0.5 transition-colors duration-300 ${
+                  isScrolled
+                    ? "text-stone-500 text-[8px] sm:text-[9px]"
+                    : "text-white/85 text-[10px] sm:text-xs"
+                }`}
+              >
                 Munnar Holiday Resort
               </span>
             </div>
           </button>
 
           {/* Desktop Navigation Links */}
-          <nav className="hidden lg:flex items-center gap-8 text-sm font-medium text-white/85">
+          <nav className="hidden lg:flex items-center gap-7 sm:gap-8">
             {[
               { id: "home", label: "Home" },
               { id: "about", label: "About" },
@@ -333,8 +351,12 @@ export default function SinglePageApp() {
                 <button
                   key={nav.id}
                   onClick={() => scrollToSection(nav.id)}
-                  className={`relative py-1 transition cursor-pointer text-sm font-semibold tracking-wide ${
-                    isActive
+                  className={`relative py-1 transition cursor-pointer text-xs sm:text-sm font-semibold tracking-wide ${
+                    isScrolled
+                      ? isActive
+                        ? "text-[#00a896] font-bold after:absolute after:-bottom-1.5 after:left-0 after:right-0 after:h-[2px] after:bg-[#00a896]"
+                        : "text-stone-600 hover:text-stone-950"
+                      : isActive
                       ? "text-[#ffb400] font-bold after:absolute after:-bottom-1.5 after:left-0 after:right-0 after:h-[2px] after:bg-[#ffb400]"
                       : "text-white/80 hover:text-white"
                   }`}
@@ -346,12 +368,16 @@ export default function SinglePageApp() {
           </nav>
 
           {/* Right Action Buttons */}
-          <div className="hidden sm:flex items-center gap-4">
+          <div className="hidden sm:flex items-center gap-3">
             <a
               href="https://wa.me/917902832575?text=Hi%20Heavens%20Munnar%20Holiday%20Resort,%20I%20want%20to%20enquire%20about%20Rooms%20and%20Sightseeing%20Packages!"
               target="_blank"
               rel="noopener noreferrer"
-              className="px-5 py-2.5 bg-[#ffb400] hover:bg-[#e6a200] text-black font-bold text-xs uppercase tracking-wider rounded-xs shadow-sm transition"
+              className={`font-semibold text-xs uppercase tracking-wider rounded-lg shadow-xs transition-all duration-300 ${
+                isScrolled
+                  ? "px-4 py-1.5 bg-[#12231b] hover:bg-[#ffb400] text-white hover:text-black"
+                  : "px-5 py-2.5 bg-[#ffb400] hover:bg-[#e6a200] text-black font-bold rounded-xs shadow-sm"
+              }`}
             >
               Book Now
             </a>
@@ -361,7 +387,9 @@ export default function SinglePageApp() {
           <button
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
             aria-label="Toggle navigation menu"
-            className="lg:hidden p-2 text-white hover:text-[#ffb400] transition cursor-pointer"
+            className={`lg:hidden p-1.5 transition cursor-pointer ${
+              isScrolled ? "text-stone-800 hover:text-black" : "text-white hover:text-[#ffb400]"
+            }`}
           >
             {mobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
           </button>
@@ -369,7 +397,13 @@ export default function SinglePageApp() {
 
         {/* Mobile Navigation Drawer */}
         {mobileMenuOpen && (
-          <div className="lg:hidden bg-[#12231b] border-t border-white/10 px-6 py-4 flex flex-col gap-3 animate-in fade-in slide-in-from-top-2">
+          <div
+            className={`lg:hidden px-6 py-4 flex flex-col gap-3 animate-in fade-in slide-in-from-top-2 border-t ${
+              isScrolled
+                ? "bg-white/98 text-stone-800 border-stone-200 shadow-xl"
+                : "bg-[#12231b] text-white border-white/10 shadow-xl"
+            }`}
+          >
             {[
               { id: "home", label: "Home" },
               { id: "about", label: "About" },
@@ -382,18 +416,32 @@ export default function SinglePageApp() {
                 key={nav.id}
                 onClick={() => scrollToSection(nav.id)}
                 className={`py-2 text-left text-sm font-semibold tracking-wide transition ${
-                  activeSection === nav.id ? "text-[#ffb400]" : "text-white/80"
+                  activeSection === nav.id
+                    ? isScrolled
+                      ? "text-[#00a896] font-bold"
+                      : "text-[#ffb400] font-bold"
+                    : isScrolled
+                    ? "text-stone-700 hover:text-black"
+                    : "text-white/80 hover:text-white"
                 }`}
               >
                 {nav.label}
               </button>
             ))}
-            <div className="pt-3 border-t border-white/10 flex flex-col gap-2">
+            <div
+              className={`pt-3 border-t flex flex-col gap-2 ${
+                isScrolled ? "border-stone-200" : "border-white/10"
+              }`}
+            >
               <a
                 href="https://wa.me/917902832575?text=Hi%20Heavens%20Munnar%20Holiday%20Resort,%20I%20want%20to%20enquire%20about%20Rooms%20and%20Sightseeing%20Packages!"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-full py-2.5 bg-[#ffb400] text-black font-bold text-center text-xs uppercase tracking-wider rounded-xs"
+                className={`w-full py-2.5 font-bold text-center text-xs uppercase tracking-wider rounded-lg transition ${
+                  isScrolled
+                    ? "bg-[#12231b] hover:bg-[#ffb400] text-white hover:text-black"
+                    : "bg-[#ffb400] hover:bg-[#e6a200] text-black"
+                }`}
               >
                 Book Now
               </a>
@@ -588,7 +636,6 @@ export default function SinglePageApp() {
         onSelectRoomForInquiry={(roomTitle) => {
           setContactForm((prev) => ({
             ...prev,
-            service: roomTitle,
             message: `Hi, I am interested in reserving the ${roomTitle}. Please let me know the availability, check-in procedure, and special packages for my dates.`,
           }));
           scrollToSection("contact");
@@ -823,20 +870,6 @@ export default function SinglePageApp() {
                     </div>
                   </div>
 
-                  <div>
-                    <label className="text-xs font-bold text-stone-700 block mb-1">Desired Service / Package</label>
-                    <select
-                      value={contactForm.service}
-                      onChange={(e) => setContactForm({ ...contactForm, service: e.target.value })}
-                      className="w-full px-4 py-2.5 text-xs sm:text-sm border border-stone-300 rounded-xl focus:border-black focus:ring-1 focus:ring-black outline-none bg-white"
-                    >
-                      <option value="Room Stay with Pool Access">🛏️ Room Stay (with Pool Access)</option>
-                      <option value="Room Stay + Munnar Sightseeing Combo">🌟 Room Stay + Munnar Sightseeing Combo</option>
-                      <option value="Munnar Full-Day Sightseeing Package">🌄 Munnar Full-Day Sightseeing Package</option>
-                      <option value="Valara & Cheeyappara Waterfalls Tour">🌊 Valara & Waterfalls Scenic Tour</option>
-                      <option value="Family / Group Holiday Package">👨‍👩‍👧‍👦 Family / Group Holiday Package</option>
-                    </select>
-                  </div>
 
                   <div>
                     <label className="text-xs font-bold text-stone-700 block mb-1">Special Notes / Group Size</label>
