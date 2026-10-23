@@ -288,27 +288,34 @@ export default function SinglePageApp() {
       </div>
 
       {/* =========================================================================
-          GLOBAL STICKY / FLOATING NAVBAR
+          HERO SECTION NAVBAR (Non-sticky, Hero Only)
           ========================================================================= */}
       <header
-        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-          isScrolled || mobileMenuOpen
-            ? "bg-[#12231b]/95 backdrop-blur-md border-b border-white/10 shadow-md"
-            : "bg-transparent border-b border-transparent"
+        className={`absolute top-0 left-0 right-0 z-40 transition-all duration-300 ${
+          mobileMenuOpen
+            ? "bg-[#12231b] border-b border-white/10 shadow-lg"
+            : "bg-gradient-to-b from-black/75 via-black/35 to-transparent border-b border-transparent"
         }`}
       >
         <div className="max-w-7xl mx-auto px-6 sm:px-12 h-20 flex items-center justify-between">
-          {/* Logo */}
+          {/* Logo with Emblem Image */}
           <button
             onClick={() => scrollToSection("home")}
-            className="flex flex-col sm:flex-row sm:items-center sm:gap-2.5 text-white group cursor-pointer text-left"
+            className="flex items-center gap-3 text-white group cursor-pointer text-left"
           >
-            <span className="text-xl sm:text-2xl font-extrabold tracking-tight leading-none">
-              Heavens<span className="text-[#ffb400]">.</span>
-            </span>
-            <span className="text-[10px] sm:text-xs font-semibold tracking-wider text-white/85 uppercase sm:border-l sm:border-white/20 sm:pl-2.5 sm:py-0.5">
-              Munnar Holiday Resort
-            </span>
+            <img
+              src="/galary/logo.webp"
+              alt="Heavens Munnar Holiday Resort Logo"
+              className="h-11 sm:h-12 w-auto object-contain drop-shadow-md rounded-md group-hover:scale-105 transition-transform duration-300"
+            />
+            <div className="flex flex-col">
+              <span className="text-xl sm:text-2xl font-extrabold tracking-tight leading-none text-white drop-shadow-xs">
+                Heavens<span className="text-[#ffb400]">.</span>
+              </span>
+              <span className="text-[10px] sm:text-xs font-semibold tracking-wider text-white/85 uppercase mt-0.5">
+                Munnar Holiday Resort
+              </span>
+            </div>
           </button>
 
           {/* Desktop Navigation Links */}
@@ -1035,12 +1042,21 @@ export default function SinglePageApp() {
       <footer className="w-full bg-[#12231b] text-white pt-16 pb-10 border-t border-white/10">
         <div className="max-w-7xl mx-auto px-6 sm:px-12 grid grid-cols-1 md:grid-cols-4 gap-10 pb-12 border-b border-white/10">
           <div>
-            <span className="text-2xl font-extrabold tracking-tight text-white block">
-              Heavens<span className="text-[#ffb400]">.</span>
-            </span>
-            <span className="text-[11px] font-bold text-[#00a896] uppercase tracking-wider block mb-4">
-              Munnar Holiday Resort
-            </span>
+            <div className="flex items-center gap-3 mb-3">
+              <img
+                src="/galary/logo.webp"
+                alt="Heavens Munnar Holiday Resort Logo"
+                className="h-12 w-auto object-contain rounded-md drop-shadow-xs bg-white/5 p-1 border border-white/10"
+              />
+              <div>
+                <span className="text-2xl font-extrabold tracking-tight text-white block leading-none">
+                  Heavens<span className="text-[#ffb400]">.</span>
+                </span>
+                <span className="text-[10px] font-bold text-[#00a896] uppercase tracking-wider block mt-1">
+                  Munnar Holiday Resort
+                </span>
+              </div>
+            </div>
             <p className="text-xs text-white/70 leading-relaxed max-w-xs mb-4 text-justify">
               Quality room accommodations and curated Munnar sightseeing packages. Located conveniently on Highway 85 in Valara, Adimali, your gateway to Munnar's iconic tea gardens and waterfalls.
             </p>
