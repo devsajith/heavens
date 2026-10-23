@@ -1070,105 +1070,69 @@ export default function SinglePageApp() {
       </section>
 
       {/* =========================================================================
-          GLOBAL FOOTER (Consistent Adventor Deep Forest Theme)
+          GLOBAL FOOTER (Compact, Small Footer)
           ========================================================================= */}
-      <footer className="w-full bg-[#12231b] text-white pt-16 pb-10 border-t border-white/10">
-        <div className="max-w-7xl mx-auto px-6 sm:px-12 grid grid-cols-1 md:grid-cols-4 gap-10 pb-12 border-b border-white/10">
-          <div>
-            <div className="flex items-center gap-3 mb-3">
-              <img
-                src="/galary/logo.webp"
-                alt="Heavens Munnar Holiday Resort Logo"
-                className="h-12 w-auto object-contain rounded-md drop-shadow-xs bg-white/5 p-1 border border-white/10"
-              />
-              <div>
-                <span className="text-2xl font-extrabold tracking-tight text-white block leading-none">
-                  Heavens<span className="text-[#ffb400]">.</span>
-                </span>
-                <span className="text-[10px] font-bold text-[#00a896] uppercase tracking-wider block mt-1">
-                  Munnar Holiday Resort
-                </span>
-              </div>
+      <footer className="w-full bg-[#12231b] text-white py-8 border-t border-white/10">
+        <div className="max-w-7xl mx-auto px-6 sm:px-12 flex flex-col md:flex-row items-center justify-between gap-6">
+          {/* Brand & Logo */}
+          <div className="flex items-center gap-3">
+            <img
+              src="/galary/logo.webp"
+              alt="Heavens Munnar Logo"
+              className="h-10 w-auto object-contain rounded-md bg-white/5 p-1 border border-white/10"
+            />
+            <div>
+              <span className="text-lg font-extrabold tracking-tight text-white block leading-none">
+                Heavens<span className="text-[#ffb400]">.</span>
+              </span>
+              <span className="text-[10px] font-semibold text-[#00a896] uppercase tracking-wider block mt-0.5">
+                Munnar Holiday Resort • Valara, Adimali
+              </span>
             </div>
-            <p className="text-xs text-white/70 leading-relaxed max-w-xs mb-4 text-justify">
-              Quality room accommodations and curated Munnar sightseeing packages. Located conveniently on Highway 85 in Valara, Adimali, your gateway to Munnar's iconic tea gardens and waterfalls.
-            </p>
-            <p className="text-xs text-white/60 leading-relaxed">
-              Near Jacobite Church, Valara, Adimali,<br />
-              Idukki District, Kerala - 685561
-            </p>
+          </div>
+
+          {/* Quick Nav Links */}
+          <nav className="flex flex-wrap items-center justify-center gap-5 sm:gap-6 text-xs text-white/70">
+            <button onClick={() => scrollToSection("home")} className="hover:text-white transition cursor-pointer">Home</button>
+            <button onClick={() => scrollToSection("about")} className="hover:text-white transition cursor-pointer">About</button>
+            <button onClick={() => scrollToSection("rooms")} className="hover:text-white transition cursor-pointer">Rooms</button>
+            <button onClick={() => scrollToSection("attractions")} className="hover:text-white transition cursor-pointer">Attractions</button>
+            <button onClick={() => scrollToSection("gallery")} className="hover:text-white transition cursor-pointer">Gallery</button>
+            <button onClick={() => scrollToSection("contact")} className="hover:text-white transition cursor-pointer">Contact</button>
+          </nav>
+
+          {/* Contact & Location Link */}
+          <div className="flex items-center gap-4 text-xs">
+            <a
+              href="tel:7902832575"
+              className="text-white/80 hover:text-[#ffb400] transition"
+            >
+              📞 +91 7902832575
+            </a>
+            <a
+              href="https://wa.me/917902832575?text=Hi%20Heavens%20Munnar%20Holiday%20Resort"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-[#ffb400] font-semibold hover:underline"
+            >
+              💬 WhatsApp
+            </a>
             <a
               href="https://maps.app.goo.gl/fevh6C9LK8ZTJeeF7"
               target="_blank"
               rel="noopener noreferrer"
-              className="mt-3 inline-flex items-center gap-1.5 text-xs text-[#ffb400] font-semibold hover:underline"
+              className="text-white/60 hover:text-[#ffb400] transition flex items-center gap-1"
             >
-              <MapPin className="w-3.5 h-3.5" />
-              <span>Open in Google Maps →</span>
+              <MapPin className="w-3 h-3 text-[#ffb400]" />
+              <span>Maps</span>
             </a>
-          </div>
-
-          <div>
-            <h4 className="text-xs font-bold uppercase tracking-widest text-[#ffb400] mb-4">
-              Sections
-            </h4>
-            <ul className="space-y-2 text-xs text-white/70">
-              <li><button onClick={() => scrollToSection("home")} className="hover:text-white transition cursor-pointer">Home</button></li>
-              <li><button onClick={() => scrollToSection("about")} className="hover:text-white transition cursor-pointer">About Us</button></li>
-              <li><button onClick={() => scrollToSection("rooms")} className="hover:text-white transition cursor-pointer">Rooms & Stays</button></li>
-              <li><button onClick={() => scrollToSection("attractions")} className="hover:text-white transition cursor-pointer">Attractions</button></li>
-              <li><button onClick={() => scrollToSection("gallery")} className="hover:text-white transition cursor-pointer">Gallery</button></li>
-              <li><button onClick={() => scrollToSection("contact")} className="hover:text-white transition cursor-pointer">Contact</button></li>
-            </ul>
-          </div>
-
-          <div>
-            <h4 className="text-xs font-bold uppercase tracking-widest text-[#ffb400] mb-4">
-              Rooms & Packages
-            </h4>
-            <ul className="space-y-2 text-xs text-white/70">
-              <li>Room Stay with Swimming Pool</li>
-              <li>Munnar Full-Day Sightseeing Tour</li>
-              <li>Valara & Waterfalls Scenic Tour</li>
-              <li>Room Stay + Sightseeing Combo</li>
-              <li>Family & Group Holiday Packages</li>
-            </ul>
-          </div>
-
-          <div>
-            <h4 className="text-xs font-bold uppercase tracking-widest text-[#ffb400] mb-4">
-              Tour & Room Desk
-            </h4>
-            <div className="flex flex-col gap-2 text-xs text-white/80">
-              <a href="tel:7902832575" className="hover:text-[#ffb400] transition">📞 +91 7902832575</a>
-              <a href="tel:8606392143" className="hover:text-[#ffb400] transition">📞 +91 8606392143</a>
-              <a
-                href="https://wa.me/917902832575?text=Hi%20Heavens%20Munnar%20Holiday%20Resort,%20I%20would%20like%20to%20inquire%20about%20rooms%20and%20packages"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="mt-1 inline-flex items-center gap-1.5 text-[#ffb400] font-bold hover:underline"
-              >
-                💬 WhatsApp Desk Coordinator →
-              </a>
-              <a
-                href="https://maps.app.goo.gl/fevh6C9LK8ZTJeeF7"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="mt-1 inline-flex items-center gap-1.5 text-stone-300 hover:text-[#ffb400] transition text-xs"
-              >
-                <MapPin className="w-3.5 h-3.5 text-[#ffb400]" />
-                <span>Google Maps Location Pin</span>
-              </a>
-            </div>
           </div>
         </div>
 
-        <div className="max-w-7xl mx-auto px-6 sm:px-12 pt-8 flex flex-col sm:flex-row items-center justify-between text-xs text-white/40 gap-4">
+        {/* Copyright strip */}
+        <div className="max-w-7xl mx-auto px-6 sm:px-12 mt-6 pt-4 border-t border-white/5 flex flex-col sm:flex-row items-center justify-between text-[11px] text-white/40 gap-2 text-center">
           <p>© {new Date().getFullYear()} Heavens Munnar Holiday Resort. All rights reserved.</p>
-          <div className="flex gap-6">
-            <span>Rooms & Stays</span>
-            <span>Munnar Sightseeing Packages</span>
-          </div>
+          <p>Valara, Highway 85, Adimali, Kerala - 685561</p>
         </div>
       </footer>
 
